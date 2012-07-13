@@ -23,7 +23,7 @@ package "postfix" do
 end
 
 service "postfix" do
-  supports :status => true, :restart => true, :reload => true
+  supports :status => true, :reload => true
   action :enable
 end
 
