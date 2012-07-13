@@ -24,6 +24,7 @@ end
 
 service "postfix" do
   supports :status => true, :reload => true
+  stop_command '/etc/init.d/postfix status && /etc/init.d/postfix stop'
   action :enable
 end
 
