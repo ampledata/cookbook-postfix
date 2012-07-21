@@ -16,7 +16,7 @@
 # limitations under the License.
 
 default['postfix']['mail_type']  = "client"
-default['postfix']['myhostname'] = fqdn
+default['postfix']['myhostname'] = fqdn or hostname
 default['postfix']['mydomain']   = domain
 default['postfix']['myorigin']   = "$myhostname"
 default['postfix']['relayhost']  = ""
