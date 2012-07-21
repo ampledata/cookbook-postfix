@@ -16,7 +16,7 @@
 # limitations under the License.
 
 default['postfix']['mail_type']  = "client"
-default['postfix']['myhostname'] = myhostname
+default['postfix']['myhostname'] = node['fqdn']
 default['postfix']['mydomain']   = domain
 default['postfix']['myorigin']   = "$myhostname"
 default['postfix']['relayhost']  = ""
@@ -34,8 +34,3 @@ default['postfix']['smtp_sasl_user_name'] = ""
 default['postfix']['smtp_sasl_passwd']    = ""
 
 default['postfix']['aliases'] = {}
-
-
-def myhostname
-  fqdn.nil? ? hostname : fqdn
-end
