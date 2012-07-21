@@ -17,7 +17,7 @@
 
 default['postfix']['mail_type']  = "client"
 default['postfix']['myhostname'] = node['fqdn']
-default['postfix']['mydomain']   = domain
+default['postfix']['mydomain']   = node['domain']
 default['postfix']['myorigin']   = "$myhostname"
 default['postfix']['relayhost']  = ""
 default['postfix']['mail_relay_networks']        = "127.0.0.0/8"
