@@ -19,10 +19,15 @@ smtp_sasl_security_options = <%= node['postfix']['smtp_sasl_security_options'] %
 smtp_tls_CAfile = <%= node['postfix']['smtp_tls_cafile'] %>
 smtp_use_tls = <%= node['postfix']['smtp_use_tls'] %>
 <% end -%>
+
+<% if node['postfix']['domain'] %>
 myhostname = <%= node['postfix']['myhostname'] %>
+<% end -%>
+
 <% if node['postfix']['domain'] %>
 mydomain = <%= node['postfix']['mydomain'] %>
 <% end -%>
+
 myorigin = <%= node['postfix']['myorigin'] %>
 smtpd_banner = $myhostname ESMTP $mail_name 
 alias_maps = hash:/etc/aliases
